@@ -3,8 +3,10 @@ docs: Es el folder donde se estan poniendo los data sources(pdf, excel)
 
 
 ## Como iniciar el servidor?
+```
 export OPENAI_API_KEY=sk-******
 python3 app/server.py
+```
 
 
 # Endpoints

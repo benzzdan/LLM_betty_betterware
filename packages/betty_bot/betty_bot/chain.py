@@ -48,6 +48,8 @@ AI: Muy bien, ¿deseas que te ofrezca algunas opciones para obetener la oferta? 
 ---
 """
 
+APP_DIR = os.environ["APP_DIR"]
+
 user_template = "Quesion:```{question}```"
 
 messages = [
@@ -57,7 +59,7 @@ messages = [
 
 qa_prompt = ChatPromptTemplate.from_messages(messages)
 
-pdf_loader = PyPDFLoader('../../../docs/betterware.pdf')
+pdf_loader = PyPDFLoader('%s/docs/betterware.pdf' % APP_DIR)
 documents = pdf_loader.load()
 
 for file in os.listdir("docs"):

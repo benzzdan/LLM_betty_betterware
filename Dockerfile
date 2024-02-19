@@ -24,8 +24,4 @@ EXPOSE 8000
 
 ENV APP_DIR="/app"
 
-ARG OPENAI_API_KEY
-
-ENV OPENAI_API_KEY=${OPENAI_API_KEY}
-
 CMD exec uvicorn app.server:app --host 0.0.0.0 --port 8000

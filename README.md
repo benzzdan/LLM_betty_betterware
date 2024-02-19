@@ -1,14 +1,28 @@
+## Conceptos
+
 data: En este folder estaria guardandose lo del RAG y Chromadb
 docs: Es el folder donde se estan poniendo los data sources(pdf, excel)
 
 
 ## Como iniciar el servidor?
 ```
+poetry install 
+pip install -r requirements.txt
 export OPENAI_API_KEY=sk-******
 python3 app/server.py
 ```
 
 
+## Como correr con docker
+
+(Si estas usando mac)
+```
+docker build -t <DOCKER_REPO>/llm-betty:0.0.1-mac  .
+docker run -ti --env OPENAI_API_KEY=sk-xxxxxxxx -p 8000:8000  benzzdan/llm-betty:0.0.1-mac
+```
+
+(Docker build para imagen para AWS)
+docker buildx build -t benzzdan/llm-betty:0.0.1 --platform=linux/amd64 .
 # Endpoints
 
 http://localhost:8000/docs
